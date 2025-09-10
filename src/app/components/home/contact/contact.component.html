@@ -1,0 +1,147 @@
+<!-- Contact Section -->
+<section id="contacto" class="contact">
+  <div class="section-container">
+    <div class="section-header fade-in">
+      <div class="section-subtitle-badge">Contacto</div>
+      <h2 class="section-title">Comencemos Su Proyecto</h2>
+      <p class="section-description">
+        ¿Listo para transformar su empresa? Contáctenos para una consulta y descubra cómo podemos impulsar su crecimiento digital.
+      </p>
+    </div>
+    <div class="contact-content">
+      <div class="contact-info fade-in">
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <ion-icon name="mail-outline"></ion-icon>
+          </div>
+          <div class="contact-item-content">
+            <h4>Email Corporativo</h4>
+            <p>info@sistemaspamplona.com<br>ventas@sistemaspamplona.com</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <ion-icon name="call-outline"></ion-icon>
+          </div>
+          <div class="contact-item-content">
+            <h4>Contacto</h4>
+            <p>Teléfono: 318 5471853</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <ion-icon name="location-outline"></ion-icon>
+          </div>
+          <div class="contact-item-content">
+            <h4>Oficinas Principales</h4>
+            <p>Cra. 12 #20-10 <br> Girardot., Colombia</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">
+            <ion-icon name="time-outline"></ion-icon>
+          </div>
+          <div class="contact-item-content">
+            <h4>Horarios de Atención</h4>
+            <p>Lun - Vie: 8:00 AM - 6:00 PM<br>Soporte 24/7 disponible</p>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form fade-in" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="nombre" class="form-label">Nombre *</label>
+          <input 
+            type="text" 
+            id="nombre" 
+            name="nombre" 
+            class="form-input" 
+            placeholder="Su nombre completo" 
+            formControlName="nombre"
+            [class.error]="contactForm.get('nombre')?.invalid && contactForm.get('nombre')?.touched">
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Email *</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            class="form-input" 
+            placeholder="su.email@empresa.com" 
+            formControlName="email"
+            [class.error]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+        </div>
+
+        <div class="form-group">
+          <label for="telefono" class="form-label">Teléfono</label>
+          <input 
+            type="tel" 
+            id="telefono" 
+            name="telefono" 
+            class="form-input" 
+            placeholder="318 5471853"
+            formControlName="telefono">
+        </div>
+
+        <div class="form-group">
+          <label for="empresa" class="form-label">Empresa</label>
+          <input 
+            type="text" 
+            id="empresa" 
+            name="empresa" 
+            class="form-input" 
+            placeholder="Nombre de su empresa"
+            formControlName="empresa">
+        </div>
+
+        <div class="form-group">
+          <label for="servicio" class="form-label">Servicio de Interés</label>
+          <select id="servicio" name="servicio" class="form-select" formControlName="servicio">
+            <option value="">Seleccione un servicio</option>
+            <option value="desarrollo-software">Desarrollo de Software</option>
+            <option value="venta-equipos">Venta de Equipos y Accesorios</option>
+            <option value="mantenimiento">Mantenimiento de Equipos</option>
+            <option value="reparacion-hardware">Reparación de Hardware</option>
+            <option value="instalacion-redes">Instalación de Redes</option>
+            <option value="instalacion-camaras">Instalación de Cámaras</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje" class="form-label">Descripción *</label>
+          <textarea 
+            id="mensaje" 
+            name="mensaje" 
+            class="form-textarea" 
+            placeholder="Describa brevemente su proyecto, objetivos y requerimientos específicos..."
+            formControlName="mensaje"
+            [class.error]="contactForm.get('mensaje')?.invalid && contactForm.get('mensaje')?.touched">
+          </textarea>
+        </div>
+
+        <ion-button 
+          type="submit" 
+          expand="block"
+          size="large"
+          [disabled]="isSubmitting || contactForm.invalid">
+          <span *ngIf="!isSubmitting">Enviar Solicitud</span>
+          <span *ngIf="isSubmitting">Enviando...</span>
+          <ion-icon name="arrow-forward-outline" *ngIf="!isSubmitting"></ion-icon>
+        </ion-button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Toast for notifications -->
+<ion-toast
+  [isOpen]="showToast"
+  [message]="toastMessage"
+  [color]="toastColor"
+  [duration]="5000"
+  (didDismiss)="showToast = false">
+</ion-toast>

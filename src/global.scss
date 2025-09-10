@@ -35,3 +35,329 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+/* Sistemas Pamplona Custom Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colores basados en el logo - Versión Profesional */
+    --sp-green: #4CAF50;
+    --sp-green-light: #66BB6A;
+    --sp-green-dark: #388E3C;
+    --sp-blue: #1565C0;
+    --sp-blue-light: #42A5F5;
+    --sp-blue-dark: #0D47A1;
+    --sp-orange: #FF9800;
+    --sp-orange-light: #FFB74D;
+    --sp-orange-dark: #F57C00;
+    
+    /* Paleta neutral profesional */
+    --white: #FFFFFF;
+    --gray-50: #FAFAFA;
+    --gray-100: #F5F5F5;
+    --gray-200: #EEEEEE;
+    --gray-300: #E0E0E0;
+    --gray-400: #BDBDBD;
+    --gray-500: #9E9E9E;
+    --gray-600: #757575;
+    --gray-700: #616161;
+    --gray-800: #424242;
+    --gray-900: #212121;
+    
+    /* Backgrounds */
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #FAFAFA;
+    --bg-dark: #1A1A1A;
+    --bg-darker: #0F0F0F;
+    
+    /* Text colors */
+    --text-primary: #212121;
+    --text-secondary: #616161;
+    --text-muted: #9E9E9E;
+    --text-white: #FFFFFF;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--sp-green), var(--sp-blue));
+    --gradient-secondary: linear-gradient(135deg, var(--sp-blue), var(--sp-green));
+    --gradient-accent: linear-gradient(135deg, var(--sp-orange), var(--sp-green));
+}
+
+body {
+    font-family: 'Inter', sans-serif !important;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* Common button styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    letter-spacing: -0.025em;
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    color: var(--white);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--text-primary);
+    border: 1px solid var(--gray-300);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+    background: var(--gray-50);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Ionic button overrides - Force our styling */
+ion-button.btn-primary {
+    background: var(--gradient-primary) !important;
+    color: var(--white) !important;
+    border-radius: 8px !important;
+    border: none !important;
+    padding: 1rem 2rem !important;
+    box-shadow: var(--shadow-md) !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    letter-spacing: -0.025em !important;
+    height: auto !important;
+    text-transform: none !important;
+    --background: transparent;
+    --color: var(--white);
+    --border-width: 0;
+    --border-style: none;
+    --border-radius: 8px;
+    --padding-start: 2rem;
+    --padding-end: 2rem;
+    --padding-top: 1rem;
+    --padding-bottom: 1rem;
+    --box-shadow: var(--shadow-md);
+}
+
+ion-button.btn-primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-lg) !important;
+}
+
+ion-button.btn-secondary {
+    background: var(--white) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--gray-300) !important;
+    border-radius: 8px !important;
+    padding: 1rem 2rem !important;
+    box-shadow: var(--shadow-sm) !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    letter-spacing: -0.025em !important;
+    height: auto !important;
+    text-transform: none !important;
+    --background: var(--white);
+    --color: var(--text-primary);
+    --border-color: var(--gray-300);
+    --border-style: solid;
+    --border-width: 1px;
+    --border-radius: 8px;
+    --padding-start: 2rem;
+    --padding-end: 2rem;
+    --padding-top: 1rem;
+    --padding-bottom: 1rem;
+    --box-shadow: var(--shadow-sm);
+}
+
+ion-button.btn-secondary:hover {
+    background: var(--gray-50) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+/* Remove default ion-button borders and ensure clean styling */
+ion-button {
+    --border-width: 0;
+    --border-style: none;
+    --ripple-color: transparent;
+}
+
+/* For buttons with our custom classes, override all default styling */
+ion-button.btn-primary,
+ion-button.btn-secondary {
+    --background: transparent;
+    --color: inherit;
+    --border-width: 0;
+    --border-style: none;
+    --box-shadow: none;
+    --ripple-color: rgba(255, 255, 255, 0.2);
+}
+
+ion-button.button-outline {
+    --border-width: 1px;
+    --border-style: solid;
+}
+
+/* Contact form button styling */
+.contact-form ion-button[type="submit"] {
+    --background: linear-gradient(135deg, var(--sp-green), var(--sp-blue));
+    --color: var(--white);
+    --border-radius: 8px;
+    --border-width: 0;
+    --border-style: none;
+    --padding-start: 2rem;
+    --padding-end: 2rem;
+    --padding-top: 1rem;
+    --padding-bottom: 1rem;
+    --box-shadow: var(--shadow-md);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: -0.025em;
+    height: 56px;
+    text-transform: none;
+    margin-top: 1rem;
+}
+
+.contact-form ion-button[type="submit"]:hover {
+    --box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.contact-form ion-button[type="submit"]:disabled {
+    --background: var(--gray-300);
+    --color: var(--gray-600);
+    opacity: 0.8;
+}
+
+/* Fix nested button appearance - remove inner button styling */
+ion-button .button-native {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+}
+
+ion-button .button-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Ensure no double borders or backgrounds */
+ion-button .button-native::after {
+    display: none !important;
+}
+
+ion-button .button-native::before {
+    display: none !important;
+}
+
+/* Remove any potential ripple or focus ring conflicts */
+ion-button .button-native .button-ripple {
+    display: none !important;
+}
+
+/* Ensure clean button appearance */
+ion-button.button-solid .button-native {
+    --background: transparent !important;
+    --color: inherit !important;
+}
+
+/* Section styles */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.section-subtitle-badge {
+    display: inline-block;
+    background: var(--white);
+    color: var(--sp-green);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    border: 1px solid var(--gray-200);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    letter-spacing: -0.025em;
+}
+
+.section-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Fade in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .section-container {
+        padding: 2rem 1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .btn {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9rem;
+    }
+}

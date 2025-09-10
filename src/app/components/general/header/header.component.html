@@ -1,0 +1,25 @@
+<ion-header [translucent]="true" class="header" [class.scrolled]="isScrolled">
+  <ion-toolbar>
+    <div class="nav-container">
+      <a (click)="scrollToSection('hero')" class="logo">
+        <div class="logo-icon"></div>
+        <div class="logo-text">Sistemas Pamplona</div>
+      </a>
+      
+      <ul class="nav-menu" [class.active]="menuOpen">
+        <li><a (click)="scrollToSection('hero')" class="nav-link">Inicio</a></li>
+        <li><a (click)="scrollToSection('services')" class="nav-link">Catálogo</a></li>
+        <li><a (click)="scrollToSection('team')" class="nav-link">Equipo</a></li>
+        <li><a (click)="scrollToSection('testimonials')" class="nav-link">Testimonios</a></li>
+        <li><a (click)="scrollToSection('contact')" class="nav-cta">Contacto</a></li>
+      </ul>
+      
+      <ion-button 
+        fill="clear" 
+        class="mobile-menu-toggle" 
+        (click)="toggleMobileMenu()">
+        <ion-icon name="menu-outline"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-header>
