@@ -15,7 +15,7 @@ import {
   TeamComponent,
   TestimonialsComponent,
   ContactComponent
-} from '../components/components.module';
+} from '../../components/components.module';
 
 
 @NgModule({
